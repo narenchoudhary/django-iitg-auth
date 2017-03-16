@@ -17,13 +17,14 @@
         <nav>
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo">Example</a>
-                    <a href="#" data-activates="mobile-nav" class="button-collapse">
-                        <i class="material-icons">menu</i>
-                    </a>
+                    <a href="#" class="brand-logo">Demo Project</a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                     </ul>
+
+                    <a href="#" data-activates="mobile-nav" class="button-collapse">
+                        <i class="material-icons">menu</i>
+                    </a>
                     <ul class="side-nav" id="mobile-nav">
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                     </ul>
@@ -47,5 +48,8 @@
     <footer></footer>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/materialize.min.js' %}"></script>
+    <script>
+        $(".button-collapse").sideNav();
+    </script>
 </body>
 </html>

@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, View
 
-from iitgauth import WebmailLoginView
+from iitgauth.views import WebmailLoginView
 
 
 class LoginView(WebmailLoginView):
