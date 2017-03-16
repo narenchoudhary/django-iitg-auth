@@ -1,7 +1,7 @@
 django-iitg-auth
 ================
 
-``django-iitg-auth`` is a reusable Django application for which provides
+``django-iitg-auth`` is a reusable Django application which provides
 a custom authencation backend for authenticating with IIT Guwahati webmail servers,
 a login form and a utility view.
 

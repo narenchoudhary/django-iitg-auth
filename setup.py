@@ -10,19 +10,19 @@ except IOError:
 setup(
     name='django-iitg-auth',
     version='.'.join(str(i) for i in iitgauth.VERSION),
-    description='django-iitg-auth`` is a reusable Django application for '
+    description='``django-iitg-auth`` is a reusable Django application for '
                 'which provides a custom authencation backend for '
                 'authenticating with IIT Guwahati webmail servers, a login '
-                'form and a utility view',
+                'form and a utility view.',
     long_description=readme,
     packages=find_packages(exclude=('tests', 'docs', 'example', )),
     author='Narendra Choudhary',
     author_email='narendralegha.mail@gmail.com',
-    url='https://github.com/narenchoudhary/django-iitg-auth/tree/master',
+    url='https://github.com/narenchoudhary/django-iitg-auth',
     install_requires=['Django>=1.7'],
-    license='BSD',
+    license='BSD 3-Clause',
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Framework :: Django :: 1.8',
@@ -41,6 +41,6 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
-    keywords='django library development',
+    keywords='django library development authentication',
     zip_safe=False,
 )
