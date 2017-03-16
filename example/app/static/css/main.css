@@ -1,0 +1,76 @@
+/* offset content by the width of the side menu*/
+header, main, footer {
+    padding-left: 300px;
+    display: block;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+.container {
+    width: 90%;
+}
+nav.top-nav {
+    height: 122px;
+    box-shadow: none;
+}
+nav .nav-wrapper {
+    position: relative;
+    height: 100%;
+}
+a.button-collapse.top-nav {
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    top: 0;
+    float: none;
+    text-align: center;
+    font-size: 32px;
+    color: white;
+}
+a.button-collapse.top-nav.full {
+    line-height: 122px;
+}
+nav.top-nav a.page-title {
+    line-height: 122px;
+    font-size: 48px;
+}
+.logo {
+    text-align: center;
+    margin: 16px;
+}
+
+#logo-container {
+    height: 200px;
+    margin-bottom: 32px;
+}
+#institute-logo {
+    display: inline-block;
+    height: 100%;
+}
+.toc-wrapper {
+    position: relative;
+}
+.model-field {
+    margin-top: 5px;
+}
+.field-name {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+    nav .nav-wrapper {
+        text-align: center;
+    }
+    nav.top-nav a.page-title {
+        line-height: 122px;
+        font-size: 30px;
+    }
+}

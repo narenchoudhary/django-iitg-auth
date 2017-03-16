@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="description" content="django-iitg-auth">
+    <title>Login</title>
+    <link href="{% static 'icons/material-icons.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col l4 m2 hide-on-small-only"></div>
+                <div class="col l4 m8 s12 center-align">
+                    <img id="center-logo" class="responsive-img"
+                         src="{% static 'img/logo3.png' %}"/>
+                    <h5 id="login-heading" class="indigo-text">
+                        Example Login Form
+                    </h5>
+                    <div class="card-panel grey lighten-5">
+                        <ul>
+                            {% for error in form.non_field_errors %}
+                            <li class="red-text">
+                                <u>{{ error }}</u>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <form method="post">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="row left-align">
+                                    <div class="input-field col s12">
+                                        <span class="red-text">{{ field.errors }}</span>
+                                        {{ field }}
+                                        {{ field.label_tag }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <div class='row center'>
+                                <div class="col s12">
+                                    <button class='btn waves-effect indigo'
+                                        type='submit' name='btn_login' style="width: 80%">
+                                    Login
+                                </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col l4 m2 hide-on-small-only"></div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/materialize.min.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $('select').material_select();
+        });
+    </script>
+</body>
+</html>

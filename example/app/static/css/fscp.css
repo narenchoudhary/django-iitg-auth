@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+.model-field {
+    margin-top: 5px;
+}
+.field-name {
+    font-weight: bold;
+}
+
+.bottom10 {
+    margin-bottom: 10px;
+}
+
+.caption {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.faq-que {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 1em;
+    line-height: 1.2em;
+}
+
+.faq-ans {
+    line-height: 1.5em;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+}
