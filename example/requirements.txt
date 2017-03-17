@@ -1,1 +1,2 @@
 Django>=1.8
+django-iitg-auth==0.0.2
