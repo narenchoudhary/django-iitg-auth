@@ -12,7 +12,7 @@ Installation
 
 .. code-block:: python
 
-    pip install git+https://github.com/narenchoudhary/django-iitg-auth#egg=django-iitg-auth
+    pip install django-iitg-auth
 
 
 Usage: Authentication Backend
