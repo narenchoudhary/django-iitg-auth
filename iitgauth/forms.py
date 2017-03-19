@@ -9,6 +9,21 @@ from .constants import LOGIN_SERVERS
 
 
 class WebmailLoginForm(forms.Form):
+    """
+    Webmail authentication Form. It works exactly similar to Django's
+    builton ``AuthenticationForm``. In fact, the source code is same as
+    ``AuthenticationForm`` expect the logic involving ``login_server``
+    and ``port``.
+
+    This form class has 3 fields:
+    * Username
+    * Password
+    * Login Server
+
+    Default value of port is set to ``poplib.POP3_SSL_PORT`` (which is 995).
+
+    Override ``error_messages`` for custom errors.
+    """
     username = forms.CharField(max_length=254, label=_('Webmail'))
     password = forms.CharField(widget=forms.PasswordInput, label=_('Password'))
     login_server = forms.ChoiceField(choices=LOGIN_SERVERS)
