@@ -1,5 +1,8 @@
 import poplib
-from unittest import mock
+try:
+    from unittest import mock
+except ImportError:
+    import mock
 
 from django import forms
 from django.contrib.auth import get_user_model
@@ -121,8 +124,16 @@ class WebmailLoginFormTestActiveUser(TestCase):
 class WebmailLoginFormTestInactiveUser(TestCase):
 
     def setUp(self):
+        # cannot include is_active in create_user() becuase in Django==1.8
+        # is_active=False is already included in _create_user() in auth
+        # package. Including is_active in create_user() leads to following
+        # TypeError.
+        # TypeError: ModelBase object got multiple values for keyword 
+        # argument 'is_active'.
         self.user = get_user_model().objects.create_user(
-            username='username', password='password', is_active=False)
+            username='username', password='password')
+        self.user.is_active = False
+        self.user.save()
 
     @mock.patch('django.contrib.auth.get_user_model')
     def test_confirm_login_allowed_for_inactive_user(self, mock_get_user_model):
