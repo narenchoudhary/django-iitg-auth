@@ -1,6 +1,16 @@
 django-iitg-auth
 ================
 
+.. image:: https://img.shields.io/pypi/v/django-iitg-auth.svg?style=plastic
+    :target: https://pypi.python.org/pypi/django-iitg-auth
+
+.. image:: https://travis-ci.org/narenchoudhary/django-iitg-auth.svg?branch=master
+    :target: https://travis-ci.org/narenchoudhary/django-iitg-auth
+
+.. image:: https://codecov.io/gh/narenchoudhary/django-iitg-auth/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/narenchoudhary/django-iitg-auth
+
+
 ``django-iitg-auth`` is a reusable Django application which provides
 a custom authencation backend for authenticating with IIT Guwahati webmail servers,
 a login form and a utility view.
@@ -105,3 +115,9 @@ Demo
 ====
 
 **Note:** There is a working demo project available under **example** directory.
+
+.. image:: demo.gif
+   :height: 180 px
+   :width: 320 px
+   :alt: demo
+   :align: left
