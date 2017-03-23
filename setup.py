@@ -10,7 +10,7 @@ except IOError:
 setup(
     name='django-iitg-auth',
     version='.'.join(str(i) for i in iitgauth.VERSION),
-    description='``django-iitg-auth`` is a reusable Django application for '
+    description='``django-iitg-auth`` is a reusable Django application '
                 'which provides a custom authencation backend for '
                 'authenticating with IIT Guwahati webmail servers, a login '
                 'form and a utility view.',
