@@ -12,7 +12,7 @@ class WebmailLoginForm(forms.Form):
     """
     Webmail authentication Form. It works exactly similar to Django's
     builton ``AuthenticationForm``. In fact, the source code is same as
-    ``AuthenticationForm`` expect the logic involving ``login_server``
+    ``AuthenticationForm`` except the logic involving ``login_server``
     and ``port``.
 
     This form class has 3 fields:
