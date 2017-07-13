@@ -6,6 +6,7 @@ except ImportError:
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
+from django.http import HttpRequest
 from django.test import TestCase
 
 from iitgauth.auth import WebMailAuthenticationBackend
@@ -50,6 +51,7 @@ class TestWebmailAuthBackend(TestCase):
         :param mock_pop3_ssl: mock path for `poplib.POP3_SSL``
         :return: None
         """
+        request = HttpRequest()
         response = mock_pop3_ssl.return_value
         response.username.return_value = self.user.username
         response.pass_.return_value = b'+OK'
@@ -61,7 +63,7 @@ class TestWebmailAuthBackend(TestCase):
             'port': '995'
         }
         auth_backend = WebMailAuthenticationBackend()
-        self.assertEqual(auth_backend.authenticate(**credentials), self.user)
+        self.assertEqual(auth_backend.authenticate(request, **credentials), self.user)
 
     def test_authenticate_invalid_user(self):
         """
@@ -69,6 +71,7 @@ class TestWebmailAuthBackend(TestCase):
 
         :return: None
         """
+        request = HttpRequest()
         credentials = {
             'username': 'username2',
             'password': 'password',
@@ -76,7 +79,7 @@ class TestWebmailAuthBackend(TestCase):
             'port': '995'
         }
         auth_backend = WebMailAuthenticationBackend()
-        self.assertIsNone(auth_backend.authenticate(**credentials))
+        self.assertIsNone(auth_backend.authenticate(request, **credentials))
 
     @mock.patch('poplib.POP3_SSL')
     def test_authenticate_poplib_exception(self, mock_pop3_ssl):
@@ -90,6 +93,7 @@ class TestWebmailAuthBackend(TestCase):
         # response.side_effect = poplib.error_proto
         # response.username.return_value = self.user.username
         # response.pass_.return_value = b'+OK'
+        request = HttpRequest()
         credentials = {
             'username': 'username',
             'password': 'password',
@@ -97,7 +101,7 @@ class TestWebmailAuthBackend(TestCase):
             'port': '995'
         }
         auth_backend = WebMailAuthenticationBackend()
-        self.assertIsNone(auth_backend.authenticate(**credentials))
+        self.assertIsNone(auth_backend.authenticate(request, **credentials))
 
     @mock.patch('poplib.POP3_SSL')
     def test_authenticate_value_type_exception(self, mock_pop3_ssl):
@@ -108,6 +112,7 @@ class TestWebmailAuthBackend(TestCase):
         :param mock_pop3_ssl: mock path for `poplib.POP3_SSL``
         :return: None
         """
+        request = HttpRequest()
         response = mock_pop3_ssl.return_value
         response.username.return_value = 123456
         response.pass_.return_value = 12345
@@ -119,4 +124,4 @@ class TestWebmailAuthBackend(TestCase):
             'port': '995'
         }
         auth_backend = WebMailAuthenticationBackend()
-        self.assertRaises(TypeError, auth_backend.authenticate, **credentials)
+        self.assertRaises(TypeError, auth_backend.authenticate, request, **credentials)
