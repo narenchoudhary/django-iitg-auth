@@ -110,14 +110,3 @@ Only difference is ``WebmailLoginForm`` has one extra field, .i.e. Login Server 
 
 .. _FormView: https://docs.djangoproject.com/en/1.10/ref/class-based-views/generic-editing/#formview
 
-
-Demo
-====
-
-**Note:** There is a working demo project available under **example** directory.
-
-.. image:: demo.gif
-   :height: 180 px
-   :width: 320 px
-   :alt: demo
-   :align: left
