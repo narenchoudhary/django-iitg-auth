@@ -110,3 +110,10 @@ Only difference is ``WebmailLoginForm`` has one extra field, .i.e. Login Server 
 
 .. _FormView: https://docs.djangoproject.com/en/1.10/ref/class-based-views/generic-editing/#formview
 
+
+Example Project
+===============
+
+A demo project is available in django-iitg-auth-example_ repository.
+
+.. _django-iitg-auth-example: https://github.com/narenchoudhary/django-iitg-auth-example
